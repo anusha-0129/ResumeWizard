@@ -5,9 +5,10 @@ export const LOGIN_FAILURE = 'LOGIN_FAILURE';
 export const LOGOUT_SUCCESS = 'LOGOUT_SUCCESS';
 export const SIGNUP_SUCCESS = 'SIGNUP_SUCCESS';
 export const SIGNUP_FAILURE = 'SIGNUP_FAILURE';
+const API_URL = process.env.REACT_APP_API_URL;
 export const signup = (username, email, password) => async dispatch => {
     try {
-      const response = await Axios.post("http://localhost:4000/auth/signup", {
+      const response = await Axios.post(`${API_URL}/auth/signup`, {
         username,
         email,
         password,
@@ -24,7 +25,7 @@ export const signup = (username, email, password) => async dispatch => {
   };
 export const login = (email, password) => async dispatch => {
   try {
-    const response = await Axios.post("http://localhost:4000/auth/login", {
+    const response = await Axios.post(`${API_URL}/auth/login`, {
       email,
       password,
     });
