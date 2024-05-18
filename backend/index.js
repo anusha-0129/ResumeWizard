@@ -10,13 +10,15 @@ dotenv.config()
 const app = express()
 app.use(express.json())
 app.use(cors({
-    origin: ["http://localhost:3000"],
+    origin: ["http://localhost:3000","https://resumewizard-1.onrender.com"],
     credentials: true
 }));
 app.use(cookieParser());
 app.use('/auth', UserRouter);
 database();
-
+app.get('/',(req,res)=>{
+    res.send("hello");
+})
 app.listen(process.env.PORT, () => {
     console.log("Server is Running")
 })
