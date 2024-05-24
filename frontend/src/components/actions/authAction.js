@@ -33,7 +33,6 @@ export const login = (email, password) => async dispatch => {
       dispatch({ type: LOGIN_SUCCESS });
     } else {
       dispatch({ type: LOGIN_FAILURE });
-      window.alert("Invalid email or password");
     }
   } catch (error) {
     console.log(error);

@@ -47,7 +47,6 @@ const Login = () => {
               id="email"
               label="Email Address"
               name="email"
-              autoComplete
               autoFocus
               onChange={(e) => setEmail(e.target.value)}
               value={email}
