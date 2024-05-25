@@ -10,7 +10,7 @@ dotenv.config()
 const app = express()
 app.use(express.json())
 app.use(cors({
-    origin: ["http://localhost:3000",],
+    origin: ["http://localhost:3000","https://resumewizard-jga2.onrender.com"],
     credentials: true
 }));
 app.use(cookieParser());
